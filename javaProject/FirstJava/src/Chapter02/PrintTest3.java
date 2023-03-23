@@ -1,11 +1,9 @@
 package Chapter02;
 
-public class PrintTest2 {
-
+public class PrintTest3 {
 	public static void main(String[] args) {
 		
 		String name = "손흥민 ";
-		
 		
 		// 안녕하세요 저는 000입니다. 나이는 00살 입니다.
 		System.out.print("안녕하세요! 저는 ");
@@ -22,9 +20,7 @@ public class PrintTest2 {
 		System.out.println();
 		System.out.printf("문자 : %c, 문자열 : %s", 'z', "KING");
 		
-		
-
-
+	
 	}
 
 }
