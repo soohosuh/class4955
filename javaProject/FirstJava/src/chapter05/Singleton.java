@@ -11,7 +11,9 @@ public class Singleton {
 	
 	// 내부에서 만들어진 참조값을 외부에서 사용할 수 있도록 참조값을 반환 해주는 메소드
 	public static Singleton getInstance() {
-		if(s==null)
+		if(s == null) {
+			s = new Singleton();
+		}
 		return s;
 	}
 	
