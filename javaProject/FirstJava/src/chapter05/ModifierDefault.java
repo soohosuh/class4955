@@ -2,10 +2,10 @@ package chapter05;
 
 public class ModifierDefault {
 	
-	String name;
-	int age;
+	public String name;
+	public int age;
 	
-	void tell() {
+	public void tell() {
 		System.out.println("안녕하세요. " + age + "살 " + name + "입니다." );
 	}
 
