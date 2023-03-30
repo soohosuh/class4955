@@ -2,19 +2,28 @@ package Chapter07;
 
 public class Male extends Person {
 
-	int number;
-	
-	public Male(String name, int age) {
-		super(name, age);
-		number = 975433;
+	//int age;
+		String gender = "남자"; 
+
+		public Male() {
+			
+		}
+
+		public Male(String name, String pNumber, int age, String gender) {
+			super(name, pNumber, age);
+			this.gender = gender;
+		}
 		
-	}
-	
-	
-	void call(){
-		super.call();
-		System.out.println("이사람의 주민번호는 " + number + "입니다.");
-	}
-	
+		@Override
+		void printHello() {
+			super.printHello();
+			System.out.println("성별은 " + gender +"입니다.");
+		}
+		
+		@Override
+		void printPersonInfo() {
+			super.printPersonInfo();
+			System.out.println("1");
+		}
 
 }

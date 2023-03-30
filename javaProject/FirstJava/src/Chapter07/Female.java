@@ -2,19 +2,22 @@ package Chapter07;
 
 public class Female extends Person {
 
-	int number2;
-	
-	public  Female(String name, int age) {
-		super(name, age);
-		number2 = 45566;
+	float height;
+
+	public Female() {
+		
+	}
+
+	public Female(String name, String pNumber, int age, float height) {
+		super(name, pNumber, age);
+		this.height = height;
 	}
 	
-	void call() {
-		super.call();
-		System.out.println("이사람의 주민번호는 " + number2 + "입니다.");
+	@Override
+	void printHello() {
+		super.printHello();
+		System.out.println("키는 " + height +"cm 입니다.");
 	}
-	
-	
 	
 
 }
