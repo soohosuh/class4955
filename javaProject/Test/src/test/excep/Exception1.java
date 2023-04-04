@@ -1,4 +1,4 @@
-package test;
+package test.excep;
 
 import java.util.Scanner;
 

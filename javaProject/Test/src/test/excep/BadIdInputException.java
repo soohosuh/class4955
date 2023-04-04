@@ -1,4 +1,4 @@
-package test;
+package test.excep;
 
 public class BadIdInputException extends Exception {
 	

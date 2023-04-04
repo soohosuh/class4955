@@ -32,7 +32,7 @@ public class ExceptionTest2 {
 			e.printStackTrace();
 			// System.out.println("프로그램을 종료합니다.");
 			// return; // main 메소드 종료 -> 프로그램 종료
-		} catch(InputMismatchException e) {
+		} catch(InputMismatch Exception e) {
 			System.out.println("숫자만 입력하세요.");
 		} catch(Exception e) {
 			System.out.println("예외가 발생했습니다.");
