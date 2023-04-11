@@ -19,9 +19,12 @@ public class Cha6 {
 //		}
 		
 		for(int i=1; i<10; i++) {
-			System.out.print("5x"+i+"="+5*i+"\t");
-			if(0==i%3 && 0==i%5) {
-						System.out.println();		
+			
+			if(0==i%3 ) {
+				System.out.println("5x"+i+"="+5*i+"\t");
+			}else {
+				
+				System.out.print("5x"+i+"="+5*i+"\t");
 			}
 		}
 
