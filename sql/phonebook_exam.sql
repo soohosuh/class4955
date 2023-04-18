@@ -4,17 +4,26 @@
 select * from phoneInfo_basic;
 drop table phoneInfo_basic;
 create table phoneInfo_basic (
-      idx number(6) constraint PK_phoneInfo_basic_idx primary key,
+      idx number(6) constraint PK_phoneInfo_basic_idx primary key,--idx : 대리키, 일련번호
       fr_frame varchar2(20) not null,
       fr_phonenumber varchar2(20) not null,
       fr_email varchar2(20),
       fr_address varchar2(20),
       fr_regdate DATE default sysdate
 );
+-- insert : create
 desc phoneInfo_basic;
-insert into phoneInfo_basic values (1, '차은우', '010-1111-2222', 'cha@naver', '친구주소', '23/04/18');
-insert into phoneInfo_basic values (2, '문예원', '010-1111-2222', '친구이메일', '친구주소', '23/04/18');
-insert into phoneInfo_basic values (3, '손흥민', '010-1111-2222', 'cha@naver', '친구주소', '23/04/18');
+insert into phoneInfo_basic 
+values (1, '차은우', '010-1111-2222', 'cha@naver', '친구주소', default);
+insert into phoneInfo_basic (idx, fr_name, fr_phonenumber)
+values (2, '문예원', '010-2222-3333');
+-- select
+select fr_name from phoneInfo_basic;
+select * from phoneInfo_basic where idx=1;
+select * from phoneInfo_basic where idx=2;
+-- SCOTT 의 idx -> 2
+update phoneInfo_basic
+
 
 -- 2. phoneinfo_univ 테이블의 SELECT, UPDATE, DELETE, INSERT 하는 SQL
 select * from phoneInfo_univ;
@@ -43,6 +52,8 @@ insert into phoneInfo_com (idx, fr_c_company, fr_ref)
             values (1, '중앙도서관', 2);
 update phoneInfo_com set idx=3 where idx=1;
 delete from phoneInfo_com where fr_c_company='중앙도서관';
+
+commit;
 
 
 

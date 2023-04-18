@@ -264,6 +264,7 @@ insert into emp01 (empno, ename, job, sal, gender, deptno)
 select * from emp01;
 
 
+commit;
 
 
 
