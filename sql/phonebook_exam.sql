@@ -1,0 +1,58 @@
+-- 전화번호 저장 테이블
+
+--1. phoneInfo_basic 테이블의 SELECT, UPDATE, DELETE, INSERT 하는 SQL
+select * from phoneInfo_basic;
+drop table phoneInfo_basic;
+create table phoneInfo_basic (
+      idx number(6) constraint PK_phoneInfo_basic_idx primary key,
+      fr_frame varchar2(20) not null,
+      fr_phonenumber varchar2(20) not null,
+      fr_email varchar2(20),
+      fr_address varchar2(20),
+      fr_regdate DATE default sysdate
+);
+desc phoneInfo_basic;
+insert into phoneInfo_basic values (1, '차은우', '010-1111-2222', 'cha@naver', '친구주소', '23/04/18');
+insert into phoneInfo_basic values (2, '문예원', '010-1111-2222', '친구이메일', '친구주소', '23/04/18');
+insert into phoneInfo_basic values (3, '손흥민', '010-1111-2222', 'cha@naver', '친구주소', '23/04/18');
+
+-- 2. phoneinfo_univ 테이블의 SELECT, UPDATE, DELETE, INSERT 하는 SQL
+select * from phoneInfo_univ;
+create table phoneInfo_univ (
+      idx number(6) constraint PK_phoneInfo_univ_idx primary key,
+      fr_u_major varchar2(20) default 'N' not null,
+      fr_u_year number(1) default 1 not null,
+      fr_ref number(7) constraint FK_phoneInfo_univ_fr_ref references phoneInfo_basic(idx) not null
+);
+desc phoneInfo_univ;
+insert into phoneInfo_univ (idx, fr_u_major, fr_u_year, fr_ref)
+            values (1, '컴퓨터', '1', 1);
+update phoneInfo_univ set idx=3 where idx=1;
+delete from phoneInfo_univ where fr_u_year=1;
+
+
+--3. phoneinfo_com 테이블의 SELECT, UPDATE, DELETE, INSERT 하는 SQL
+select * from phoneInfo_com;
+create table phoneInfo_com (
+      idx number(6) constraint PK_phoneInfo_com_idx primary key,
+      fr_c_company varchar2(20) default 'N' not null,
+      fr_ref number(6) constraint FK_phoneInfo_com_fr_ref references phoneInfo_basic(idx) not null
+);
+desc phoneInfo_com;
+insert into phoneInfo_com (idx, fr_c_company, fr_ref)
+            values (1, '중앙도서관', 2);
+update phoneInfo_com set idx=3 where idx=1;
+delete from phoneInfo_com where fr_c_company='중앙도서관';
+
+
+
+
+
+
+
+
+
+
+
+
+

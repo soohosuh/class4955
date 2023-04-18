@@ -2,6 +2,15 @@
 -- 2023.04.17
 -- ddl
 
+-- create table 테이블 이름 (
+--      컬럼이름 타입 [제약조건],
+--      컬럼이름 타입 [제약조건],
+--      컬럼이름 타입 [제약조건],
+--      컬럼이름 타입 [제약조건], ..
+-- );
+
+
+
 create table ddl_test (
     --컬럼들을 정의
     no number(3),
@@ -9,12 +18,6 @@ create table ddl_test (
     birth date default sysdate
 );
 
--- create table 테이블 이름 (
---      컬럼이름 타입 [제약조건],
---      컬럼이름 타입 [제약조건],
---      컬럼이름 타입 [제약조건],
---      컬럼이름 타입 [제약조건],
--- );
 
 
 desc ddl_test;
@@ -112,7 +115,7 @@ select * from emp02;
 truncate table emp02;
 
 select * from emp03;
-delete from emp03;
+delete from emp03;  --DML
 rollback;
 
 --테이블 이름 변경
