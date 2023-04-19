@@ -11,12 +11,17 @@ create table phoneInfo_basic (
       fr_address varchar2(20),
       fr_regdate DATE default sysdate
 );
+
+-- 시퀀스sequence 생성
+create sequence seq_pbasic_idx;
+
+
 -- insert : create
 desc phoneInfo_basic;
 insert into phoneInfo_basic 
-values (1, '차은우', '010-1111-2222', 'cha@naver', '친구주소', default);
+values (seq_pbasic_idx.nextval, '차은우', '010-1111-2222', 'cha@naver', '친구주소', default);
 insert into phoneInfo_basic (idx, fr_name, fr_phonenumber)
-values (2, '문예원', '010-2222-3333');
+values (seq_pbasic_idx.nextval, '문예원', '010-2222-3333');
 -- select
 select fr_name from phoneInfo_basic;
 select * from phoneInfo_basic where idx=1;
@@ -33,9 +38,13 @@ create table phoneInfo_univ (
       fr_u_year number(1) default 1 not null,
       fr_ref number(7) constraint FK_phoneInfo_univ_fr_ref references phoneInfo_basic(idx) not null
 );
+
+-- sequence 생성
+create sequence seq_puniv_idx;
+
 desc phoneInfo_univ;
 insert into phoneInfo_univ (idx, fr_u_major, fr_u_year, fr_ref)
-            values (1, '컴퓨터', '1', 1);
+            values (seq_puniv_idx.nexval, '컴퓨터', 1, seq_pbasic_idx.nextval);
 update phoneInfo_univ set idx=3 where idx=1;
 delete from phoneInfo_univ where fr_u_year=1;
 
@@ -47,6 +56,10 @@ create table phoneInfo_com (
       fr_c_company varchar2(20) default 'N' not null,
       fr_ref number(6) constraint FK_phoneInfo_com_fr_ref references phoneInfo_basic(idx) not null
 );
+-- sequence 생성
+create sequence seq_pcom_idx;
+
+
 desc phoneInfo_com;
 insert into phoneInfo_com (idx, fr_c_company, fr_ref)
             values (1, '중앙도서관', 2);
