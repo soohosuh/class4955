@@ -14,6 +14,7 @@ public class InsertTest {
 			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			// 2. Connection 객체를 생성 : 연결 정보
 			// jdbcUrl
+			
 			// oracle 연결
 			//String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 			//Connection conn = DriverManager.getConnection(dbUrl, "hr", "tiger");
@@ -23,7 +24,6 @@ public class InsertTest {
 			Connection conn = DriverManager.getConnection(dbUrl, "himedia", "tiger");
 			
 			// 3. Statement / PreparedStatement => sql 실행 요청 메소드
-			
 			// insert Sql
 			String sql = "insert into dept values (?, ?, ?)";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
