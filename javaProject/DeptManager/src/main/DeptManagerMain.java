@@ -2,8 +2,11 @@ package main;
 
 import java.util.Scanner;
 
+import controller.DeptDeleteController;
+import controller.DeptInsertController;
 import controller.DeptListController;
 import controller.DeptSearchController;
+import controller.DeptUpdateController;
 
 public class DeptManagerMain {
 	
@@ -11,7 +14,7 @@ public class DeptManagerMain {
 	
 	public static void main(String[] args) {
 		
-		
+		FrontController frontController = new FrontController
 		
 		// Controller : view -> Service -> Dao -> Service -> Controller : view
 		
@@ -27,6 +30,13 @@ public class DeptManagerMain {
 		
 		int menu = Integer.parseInt(sc.nextLine());
 		
+		if(menu==6) {
+			System.out.println("프로그램이 종료합니다.");
+			return;
+		}
+		
+		frontController.menu.get(menu).process();
+		
 		switch (menu) {
 		case 1 : 
 			new DeptListController().getDeptList();		
@@ -34,7 +44,17 @@ public class DeptManagerMain {
 		case 2:
 			new DeptSearchController().searchDept();
 			break;
+		case 3:
+			new DeptInsertController().insertDept();
+			break;
+		case 4:
+			new DeptUpdateController().updateDept();
+			break;
+		case 5:
+			new DeptDeleteController().deleteDept();
+			break;
 		case 6 :
+			System.out.println("프로그램이 종료됩니다.");
 			return;
 		
 		}

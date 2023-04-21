@@ -3,34 +3,32 @@ package service;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import controller.DeptDeleteController;
 import dao.DeptDao;
 import domain.Dept;
 import util.ConnectionProvider;
 
-public class DeptSearchService {
+
+public class DeptUpdateService {
 	
 	DeptDao dao;
 
-	public DeptSearchService() {
+	private DeptUpdateService() {
 		this.dao = DeptDao.getInstance();
-		
 	}
-	private static DeptSearchService service = new DeptSearchService();
+	private static DeptUpdateService service = new DeptDeleteService();
 	
-	public static DeptSearchService getInstance();
-	
-	// 검색 번호를 받고 Dept 정보를 저장하고 있는 객체를 반환
-	public Dept searchDept(int deptno) {
+	public int updateDept(Dept newDept) {
 		
 		Connection conn = null;
-		Dept dept = null;
+		int result = 0;
 		
 		try {
 			conn = ConnectionProvider.getConnection();
-			dept = dao.selectByDeptno(conn, deptno);
-			
+			result = dao.updateDeptByDeptno(conn, newDept);
+						
 		} catch (SQLException e) {
-			// 데이터베이스 연결 실패
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if(conn != null) {
@@ -43,11 +41,14 @@ public class DeptSearchService {
 			}
 		}
 		
-		return dept;
-		
-		
+		return result;
 		
 	}
+	
+	
+	
+	
+	
 	
 
 }

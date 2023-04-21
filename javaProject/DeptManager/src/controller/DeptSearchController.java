@@ -8,12 +8,10 @@ import service.DeptSearchService;
 public class DeptSearchController {
 	
 	// Service 
-	
 	DeptSearchService searchService;
-	
-	
+		
 	public DeptSearchController() {
-		this.searchService = new DeptSearchService();
+		this.searchService = DeptSearchService.getInstance();
 	}
 
 	public void searchDept() {
