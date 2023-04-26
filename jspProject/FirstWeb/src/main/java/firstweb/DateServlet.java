@@ -1,4 +1,4 @@
-package DateServlet;
+package firstweb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 //@WebServlet({ "/now", "/test/now" })
-public class java_servlet extends HttpServlet {
+public class DateServlet extends HttpServlet {
 	
        
 	protected void doGet(HttpServletRequest request,

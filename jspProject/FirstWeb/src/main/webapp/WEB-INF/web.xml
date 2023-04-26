@@ -10,13 +10,13 @@
 
  <servlet>
    <servlet-name>DateServlet</servlet-name>
-   <servlet-class>DateServlet.java_servlet</servlet-class>
+   <servlet-class>firstweb.DateServlet</servlet-class>
  </servlet>
 
 <servlet-mapping>
   <servlet-name>DateServlet</servlet-name>
   <url-pattern>/now/</url-pattern>
-</servlet-mapping>
+</servlet-mapping>	
 
 
 
