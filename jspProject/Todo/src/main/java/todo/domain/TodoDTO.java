@@ -49,6 +49,11 @@ public class TodoDTO {
 	public void setFinished(boolean finished) {
 		this.finished = finished;
 	}
+
+	@Override
+	public String toString() {
+		return "TodoDTO [tno=" + tno + ", todo=" + todo + ", duedate=" + duedate + ", finished=" + finished + "]";
+	}
 	
 	
 	

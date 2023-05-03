@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Todo LIST</h1>
+<h1>Todo LIST ( ${loginInfo} )</h1>
 
 <ul>
   <li><a href="${pageContext.request.contextPath}/todo/read?no=1">1. 청소 </a> 2023-05-01 DONE</li>
@@ -23,6 +23,13 @@
 </div>
 
 <a href="${pageContext.request.contextPath}/todo/register">Todo Register</a>
+
+<c:if test="${loginInfo eq null}">
+<a href="/app/login"> 로그인 </a>
+</c:if>
+<c:if test="${loginInfo ne null}">
+<a href="/app/logout"> 로그아웃 </a>
+</c:if>
 
 
 </body>
