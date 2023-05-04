@@ -2,48 +2,43 @@ package todo.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 import todo.dao.TodoDAO;
-import todo.domain.TodoDTO;
+import todo.domain.RequestTodo;
 import todo.util.ConnectionProvider;
 
-public class TodoListService {
+public class TodoInsertService {
 	
-	TodoDAO dao;
-
-	public TodoListService() {
+TodoDAO dao;
+	
+	private static TodoInsertService service = new TodoInsertService();
+	
+	private TodoInsertService() {
 		this.dao = TodoDAO.getInstance();
 	}
 	
-	private static TodoListService service = new TodoListService();
-	
-	public static TodoListService getInstance() {
+	public static TodoInsertService getInstance() {
 		return service;
 	}
 	
-	public List<TodoDTO> getList() {
-		
-		// 데이터 처리
-		// 트랜잭션 처리
+	// 입력의 요청을 처리하는 메소드
+	// RequestTodo 전달받고 Dao 메소드에 요청
+	
+	public int register(RequestTodo todo) {
 		
 		Connection conn = null;
-		List<TodoDTO> list = null;
+		int result = 0;
 		
 		try {
 			conn = ConnectionProvider.getConnection();
-			//System.out.println("conn : " + conn);
 			
-			list = dao.selectByAll(conn);
-			//System.out.println(list);
+			result = dao.insertTodo(conn, todo);		
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} finally {
+			
 			if(conn != null) {
 				try {
 					conn.close();
@@ -54,9 +49,7 @@ public class TodoListService {
 			}
 		}
 		
-		return list;
-		
+		return result;
 	}
-	
 
 }

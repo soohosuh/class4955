@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "testListController", urlPatterns = "/todo/list")
+@WebServlet(name = "testListController", urlPatterns = "/test/list")
 public class TestListController extends HttpServlet {
 
 	@Override

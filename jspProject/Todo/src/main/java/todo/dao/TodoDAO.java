@@ -1,4 +1,4 @@
-package todo.dao;
+	package todo.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -53,12 +53,12 @@ public class TodoDAO {
 
 			// List<TodoDTO> 에 저장 반환
 			while (rs.next()) {
-				int tno = rs.getInt("tno");
-				String todo = rs.getString("todo");
-				String duedate = rs.getString("duedate"); // 2023-05-05
-				boolean finished = rs.getBoolean("finished");
-
-				TodoDTO dto = new TodoDTO(tno, todo, duedate, finished);
+//				int tno = rs.getInt("tno");
+//				String todo = rs.getString("todo");
+//				String duedate = rs.getString("duedate"); // 2023-05-05
+//				boolean finished = rs.getBoolean("finished");
+//
+//				TodoDTO dto = new TodoDTO(tno, todo, duedate, finished);
 				list.add(makeTodoDTO(rs));
 
 			}
