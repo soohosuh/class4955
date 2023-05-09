@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="memberDao" class="org.example.dao."/>
+
+    <bean id="memberRegisterService"
+          class="org.example.service.MemberRegisterService"
+
+
+    >
+<!--        <constructor-arg>-->
+<!--            <ref bean="memberDao"/>-->
+<!--        </constructor-arg>-->
+        <property name="dao ">
+            <ref bean="memberDao"/>
+        </property>
+    </bean>
+
+    <bean id="changePasswordService"
+          class="org.example.service.ChangePasswordService"
+          scope="prototype"
+    >
+        <constructor-arg ref="memberDao"/>
+    </bean>
+
+
+    <bean class="org.example.service.MemberRegisterService"
+          <constructor-arg>
+              <ref bean="memberDao"/>
+          </constructor-arg>
+    </beans>
+
+    <bean id="changePasswordService"
+          class="org.example.service.ChangePasswordService">
+        <constructor-arg/>
+    </bean>
+
+
+</beans>
