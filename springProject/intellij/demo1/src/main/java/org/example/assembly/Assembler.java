@@ -16,14 +16,14 @@ public class Assembler {
     private MemberRegisterService registerService;
     private ChangePasswordService passwordService;
 
-    public Assembler() {
+    public Assembler(){
         // 객체 생성, 의존 주입
         memberDao = new MemberDao();
-        registerService = new MemberRegisterService(memberDao);
-        passwordService = new ChangePasswordService(memberDao);
-
+        registerService = new MemberRegisterService();
+        passwordService = new ChangePasswordService();
     }
 
+    // 객체를 제공해주는 메소드
     public MemberDao getMemberDao() {
         return memberDao;
     }

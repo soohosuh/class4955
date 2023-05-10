@@ -15,15 +15,14 @@ public class MemberManagerSpringMain1 {
             new GenericXmlApplicationContext("classpath:appCtx.xml");
 
     public static void main(String[] args) {
-       // 객체 비교 => 참조값 비교
+        // 객체 비교 => 참조값 비교
 
         MemberRegisterService service1 =
-                ctx.getBean(name:"memberRegisterService", MemberRegisterService.class);
+                ctx.getBean("memberRegisterService", MemberRegisterService.class);
         MemberRegisterService service2 =
-                ctx.getBean(name:"memberRegisterService", MemberRegisterService.class);
+                ctx.getBean("memberRegisterService", MemberRegisterService.class);
 
         System.out.println("service1 == service2 : "+(service1==service2));
-
 
     }
 

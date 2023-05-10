@@ -31,13 +31,8 @@ public class MemberDao implements Dao {
         return map.get(email);
     }
 
-
-
-
-
-    public Collection<Member> selectAll() {
-        return map.values();
+    public Collection<Member> selectAll(){
+        return map.values() ;
     }
-
 
 }

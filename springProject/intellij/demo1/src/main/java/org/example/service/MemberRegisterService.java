@@ -11,33 +11,32 @@ import java.util.Date;
 public class MemberRegisterService {
 
     @Autowired
-    @Qualifier
+    @Qualifier("member")
     private Dao dao;
 
-//    // 생성자를 통해서 Dao를 주입
-//    public MemberRegisterService(Dao dao) { // new MemberDao
-//        this.dao = dao;
-//    }
+    // 생성자를 통해서 Dao를 주입
+    /*public MemberRegisterService(Dao dao) { // new MemberDao
+        this.dao = dao;
+    }*/
 
     // setter 이용해서 Dao 주입
-    public void setDao(Dao dao) {
+    /*public void setDao(Dao dao) {
         this.dao = dao;
-    }
-
+    }*/
 
     // 등록 처리해주는 메소드 :
-    // RegisterRequest (email, password, confirmPassword, name)
-    public void regist(RegisterRequest request) {
+    // RegisterRequest (email, password, confirmPasswor, name)
+    public void regist(RegisterRequest request){
 
         // 이메일 존재 여부 확인 : map 저장시 email을 key 값으로 사용
-        Member member = dao.selectByEmail(request.getEmail());  // Member or null
+        Member member = dao.selectByEmail(request.getEmail()); // Member or null
 
-        if(member != null) {
-            System.out.println("중복되는 이메일이 있습니다. 다시 시도해주세요");
+        if(member != null){
+            System.out.println("중복되는 이메일이 있습니다. 다시 시도해주세요.");
             return;
         }
 
-        // 저장을 하기위한 Member 객체 생성
+        // 저장으르 하기위한 Member 객체 생성
         Member newMember = new Member();
         newMember.setEmail(request.getEmail());
         newMember.setPassword(request.getPassword());
@@ -48,6 +47,7 @@ public class MemberRegisterService {
         dao.insert(newMember);
 
         System.out.println("저장되었습니다.");
+
 
 
     }
