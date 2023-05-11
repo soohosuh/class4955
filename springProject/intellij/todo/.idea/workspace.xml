@@ -5,27 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5818b4b-f78b-47ec-81a9-1d1ae330af3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/hi/app/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/hi/app/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/hi/app/controller/SampleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/hi/app/indexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/hello.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/member/loginForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/sample/sample1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/sample/sample2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hi/app/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hi/app/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/loginForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sample/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringMVC/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/hi/app/controller/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/com/hi/app/domain/UserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hi/app/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hi/app/controller/TodoListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hi/app/controller/TodoReadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/read.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/registForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hi/app/controller/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hi/app/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hi/app/controller/TodoRegistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sample/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/search/search1.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +63,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -77,11 +73,13 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.33678162",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "6fd232251ba9e66f5bc7137b177b960b",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hi\Documents\GitHub\class4955\springProject\intellij\todo\src\main\webapp\WEB-INF\views\todo" />
       <recent name="C:\Users\hi\Documents\GitHub\class4955\springProject\intellij\todo\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\hi\Documents\GitHub\class4955\springProject\intellij\todo\src\main\webapp\WEB-INF\views" />
     </key>
@@ -216,6 +214,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683706250395</updated>
       <workItem from="1683706251215" duration="5189000" />
+      <workItem from="1683783818441" duration="4371000" />
     </task>
     <servers />
   </component>

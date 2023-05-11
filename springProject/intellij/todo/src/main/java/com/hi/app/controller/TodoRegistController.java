@@ -6,26 +6,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping("/todo/regist")
 @Log4j2
-@RequestMapping("/login")
-public class LoginController {
+public class TodoRegistController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String loginForm() {
-        log.info("get | /login");
-
-        return "member/loginForm";
-
+    public String getRegistForm() {
+        log.info("get /todo/regist");
+        return "todo/registForm";
     }
     @RequestMapping(method = RequestMethod.POST)
-    public  String login() {
-        log.info("post | /login");
-        return "member/loginForm";
-
+    public String regist() {
+        log.info("post /todo/regist");
+        return "redirect:/todo/list";
     }
-
-
-
 
 
 }
