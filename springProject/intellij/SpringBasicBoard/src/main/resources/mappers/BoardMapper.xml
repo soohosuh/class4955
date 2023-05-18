@@ -1,0 +1,24 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- interface 연결되는 mapper XML -->
+<!-- namespace 속성 설정은 필수!! -> mapper interface의 풀네임 -->
+<mapper namespace="com.hi.board.mapper.BoardMapper">
+
+    <select id="selectAll"
+            resultType="com.hi.board.domain.BoardDTO"
+    >
+        select * from tbl_board
+    </select>
+
+
+    <insert id="insertBoard"
+            parameterType="com.hi.board.domain.RequestRegBoard">
+        insert into tbl_board (title, content, writer) values (#{title}, #{content}, #{writer});
+
+    </insert>
+
+
+</mapper>
+
