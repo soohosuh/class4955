@@ -20,6 +20,8 @@
 
    <h1>게시글 보기</h1>
    <hr>
+   ${loginInfo}
+   <hr>
    ${article}
    <table border="1">
        <tr>
