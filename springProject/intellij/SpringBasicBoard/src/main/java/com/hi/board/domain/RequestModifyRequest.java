@@ -15,7 +15,7 @@ public class RequestModifyRequest {
     private int bno;
     private String title;
     private String content;
-    private String writer;
+    /*private String writer;*/
     private String oldfile;
     private MultipartFile file;
     private String filename;

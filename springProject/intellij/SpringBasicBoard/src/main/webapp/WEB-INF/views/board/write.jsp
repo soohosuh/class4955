@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: hi
@@ -19,10 +20,13 @@
   <hr>
   <form method="post" enctype="multipart/form-data">
     <table>
+      <%--
+      회원만 작성 가능한 게시판으로 변경 -> 삭제
       <tr>
         <td>작성자</td>
-        <td><input type="hidden" name="writer" required value="${loginInfo.idx}"></td>
-      </tr>
+        <td><input type="hidden" name="writer" required></td>
+      </tr>--%>
+      <input type="hidden" name="memidx" value="${loginInfo.idx}">
       <tr>
         <td>제목</td>
         <td><input type="text" name="title" required></td>
