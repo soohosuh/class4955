@@ -95,10 +95,6 @@
     </select>
 
 
-
-
-
-
     <insert id="insertDept"
             parameterType="com.hi.deptspring.deptspring.domain.DeptRegistRequest">
         insert into dept (dname, loc) values (#{dname}, #{loc})

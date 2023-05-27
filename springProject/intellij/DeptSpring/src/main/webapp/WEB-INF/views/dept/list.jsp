@@ -69,8 +69,5 @@
     <a href="/dept/regist">부서 등록</a>
 
 
-
-
-
 </body>
 </html>
