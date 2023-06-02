@@ -95,10 +95,6 @@
     </select>
 
 
-
-
-
-
     <insert id="insertDept"
             parameterType="com.hi.deptspring.deptspring.domain.DeptRegistRequest">
         insert into dept (dname, loc) values (#{dname}, #{loc})
@@ -114,7 +110,7 @@
 
     <update id="updateDept"
             parameterType="com.hi.deptspring.deptspring.domain.DeptDTO">
-        update dept set dname=#{dname}, loc#{loc} where deptno=#{deptno}
+        update dept set dname=#{dname}, loc=#{loc} where deptno=#{deptno}
     </update>
 
     <delete id="deleteDept">
