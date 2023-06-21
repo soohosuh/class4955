@@ -6,7 +6,7 @@
 <mapper namespace="org.zerock.b4.mappers.ProductMapper">
 
     <select id="getList" resultType="ProductListDTO">
-    select p.pno, p.pname, p.price, p.status, concat(pi.uuid,'_',pi.fileName) fileNamme
+    select p.pno, p.pname, p.price, p.status, concat(pi.uuid,'_',pi.fileName) fileName
     from tbl_product p 
     left outer join tbl_product_image pi on pi.pno = p.pno
     where pi.ord = 0 or pi.ord is null

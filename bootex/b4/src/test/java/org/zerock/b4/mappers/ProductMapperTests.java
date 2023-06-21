@@ -63,8 +63,8 @@ public class ProductMapperTests {
     AtomicInteger index = new AtomicInteger();
 
     List<Map<String,String>> list = fileNames.stream().map(str -> {
-      String uuid = str.substring(0, 5);
-      String fileName = str.substring(6);
+      String uuid = str.substring(0, 36);
+      String fileName = str.substring(37);
 
       return Map.of("uuid", uuid, "fileName", fileName,"pno", ""+pno, "ord", "" + index.getAndIncrement());
 

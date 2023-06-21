@@ -86,6 +86,8 @@
       }
       actionForm.innerHTML += str
 
+      actionForm.submit()
+
     },false)
 
     uploadBtn.addEventListener("click", e => {
@@ -126,7 +128,7 @@
         const {fileName,link,uuid} = uploadFile
 
         str += `
-        <li data-uuid="${uuid}" data-fileName="${fileName}">
+        <li data-uuid='${uuid}' data-fileName='${fileName}'>
             <div>
                 <a href='http://localhost/${uuid}_${fileName}' target="_blank">
                 <img src='http://localhost/${link}'/> 
@@ -159,10 +161,10 @@
 
 
   
-    window.onbeforeunload = function(){
-      console.log("AAAAAAAAAAAAAAAA")
-      return '';
-    }
+    // window.onbeforeunload = function(){
+    //   console.log("AAAAAAAAAAAAAAAA")
+    //   return '';
+    //}
 
   </script>
 </body>
