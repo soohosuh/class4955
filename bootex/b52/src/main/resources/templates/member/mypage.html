@@ -14,30 +14,17 @@
 
 
 <div layout:fragment="content">
-  <h1>Sign in Page</h1>
+  <h1>My Page</h1>
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Bordered Table</h3>
+      <h3 class="card-title">My Page</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-      <form action="/member/signin" method="post">
-        <p>
-          <input type="text" name="username">
-        </p>
-        <p>
-          <input type="text" name="password">
-        </p>
-        <p>
-          <input type="checkbox" name="remember-me">Remember-Me
-        </p>
-        <p>
-          <button>Log IN</button>
-        </p>
-      </form>
-
-      <a href="/oauth2/authorization/kakao">KAKAO</a>
-
+        [[${#authentication.principal.mname}]]
+        <hr/>
+        [[${#authentication}]]
+        
     </div>
   </div>
 </div>
