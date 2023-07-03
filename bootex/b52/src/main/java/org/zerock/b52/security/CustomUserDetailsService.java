@@ -40,9 +40,6 @@ public class CustomUserDetailsService implements UserDetailsService {
             readDTO.getMname(),
             readDTO.getRolenames());
 
-       
-
-
         return memberDTO;
     }
     

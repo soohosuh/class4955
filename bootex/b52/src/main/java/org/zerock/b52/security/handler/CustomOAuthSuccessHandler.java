@@ -29,8 +29,11 @@ public class CustomOAuthSuccessHandler implements AuthenticationSuccessHandler{
         log.info(("=================================="));
 
         if(dto.getPw() == null || dto.getPw().equals("")){
-            response.sendRedirect("/member/modify");
+        response.sendRedirect("/member/modify");
+        return;
         }
-    }
+
+        response.sendRedirect("/member/mypage");
+  }
     
 }

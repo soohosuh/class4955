@@ -11,62 +11,86 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import org.zerock.b52.dto.MemberDTO;
+import org.zerock.b52.dto.MemberReadDTO;
+import org.zerock.b52.mappers.MemberMapper;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 @Service
 @Log4j2
-public class CustomOAuth2UserService extends DefaultOAuth2UserService {@Override
-    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        
-        log.info("===============loadUser=================");
+@RequiredArgsConstructor
+public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
-        log.info(userRequest);
+  private final MemberMapper memberMapper;
 
-        log.info("=================================");
+  @Override
+  public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
 
-        ClientRegistration clientRegistration = userRequest.getClientRegistration();
-        String clientName = clientRegistration.getClientName();
+    log.info("---------loadUser---------------");
 
-        OAuth2User oAuth2User = super.loadUser(userRequest);
-        Map<String, Object> paramMap = oAuth2User.getAttributes();
+    log.info(userRequest);
 
-        String email = null;
+    log.info("=================================");
+    ClientRegistration clientRegistration = userRequest.getClientRegistration();
+    String clientName = clientRegistration.getClientName();
 
-        switch (clientName){
-            case "kakao":
-                email = getKakaoEmail(paramMap);
-                break;
-        }
+    OAuth2User oAuth2User = super.loadUser(userRequest);
+    Map<String, Object> paramMap = oAuth2User.getAttributes();
 
-        log.info("===============================");
-        log.info(email);
-        log.info("===============================");
+    String email = null;
 
-        // DB에 해당 이메일 사용자가 있다면
-
-        // 아니라면
-
-        MemberDTO memberDTO = new MemberDTO(email, "", "카카오사용자", List.of("USER"));
-
-        return memberDTO;
+    switch (clientName){
+        case "kakao":
+            email = getKakaoEmail(paramMap);
+            break;
     }
 
-    private String getKakaoEmail(Map<String, Object> paramMap){
+    log.info("===============================");
+    log.info(email);
+    log.info("===============================");
 
-        log.info("KAKAO-----------------------------------------");
+    //DB에 해당 이메일 사용자가 있다면 
 
-        Object value = paramMap.get("kakao_account");
+    MemberReadDTO readDTO = memberMapper.selectOne(email);
 
-        log.info(value);
+    if(readDTO != null){
 
-        LinkedHashMap accountMap = (LinkedHashMap) value;
+      return new MemberDTO(
+      email,
+      readDTO.getMpw(),
+      readDTO.getMname(),
+      readDTO.getRolenames()
+      );
 
-        String email = (String)accountMap.get("email");
-
-        log.info("email..." + email);
-
-        return email;
     }
+    //아니라면 
+    MemberDTO memberDTO = new MemberDTO(
+    email, 
+    "", 
+  "카카오사용자", List.of("USER","ADMIN"));
+
+    return memberDTO;
     
+
+
+  }
+  
+
+  private String getKakaoEmail(Map<String, Object> paramMap){
+
+    log.info("KAKAO-----------------------------------------");
+
+    Object value = paramMap.get("kakao_account");
+
+    log.info(value);
+
+    LinkedHashMap accountMap = (LinkedHashMap) value;
+
+    String email = (String)accountMap.get("email");
+
+    log.info("email..." + email);
+
+    return email;
+  }
 }
