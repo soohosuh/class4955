@@ -59,13 +59,20 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+
+
 sourceSets {
     main {
         java {
-            srcDirs = ["$projectDir/src/main/java", "$projectDir/build/generated"]
+            srcDirs = ["$projectDir/src/main/java", 
+						"$projectDir/build/generated/sources/annotationProcessor/java/main"]
         }
     }
 }
 
-compileJava.dependsOn('clean')
-compileTestJava.dependsOn('clean')
+task deleteBuild(type: Delete) {
+    delete "$buildDir/generated-sources/annotations/"
+}
+
+//compileJava.dependsOn('clean')
+//compileTestJava.dependsOn('clean')

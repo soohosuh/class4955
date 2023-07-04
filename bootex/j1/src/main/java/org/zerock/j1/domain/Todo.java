@@ -21,13 +21,17 @@ import lombok.ToString;
 @Getter
 public class Todo {
     
+    // PK
     @Id
+    // 키생성 전략 DB가 알아서 한다.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long tno;
-
+    // 길이 300에 not null
     @Column(length = 300, nullable = false)
     private String title;
 
+    public void changeTitle(String title){
+        this.title=title;
+    }
     
-
 }
