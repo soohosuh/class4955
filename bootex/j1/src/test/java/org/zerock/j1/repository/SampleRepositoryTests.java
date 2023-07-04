@@ -27,7 +27,7 @@ public class SampleRepositoryTests {
     }
 
     @Test
-    public void testInsert(){
+    public void testInsert(){ 
 
         IntStream.rangeClosed(1, 100).forEach(i -> {
             Sample obj = Sample.builder()

@@ -24,5 +24,9 @@ public class Sample {
     private String first;
 
     private String last;
+
+    private String addr;
+
+    
     
 }
