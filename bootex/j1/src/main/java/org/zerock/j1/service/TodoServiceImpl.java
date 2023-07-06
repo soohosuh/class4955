@@ -40,11 +40,12 @@ public class TodoServiceImpl implements TodoService {
         .map(todo -> modelMapper.map(todo, TodoDTO.class))
         .collect(Collectors.toList());
         // PageResponseDTO에 dtoList를 담을수있게 생성
-        PageResponseDTO<TodoDTO> respnose = new PageResponseDTO<>();
-        // 담기
-        respnose.setDtoList(dtoList);
-        // Controller로 보낼값
-        return respnose;
+        // PageResponseDTO<TodoDTO> respnose = new PageResponseDTO<>();
+        // // 담기
+        // respnose.setDtoList(dtoList);
+        // // Controller로 보낼값
+        // return respnose;
+        return null;
 }
 
     @Override
