@@ -1,11 +1,11 @@
-package org.zerock.b2;
+package org.zerock.bj2;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "org.zerock.b2.mappers")
+@MapperScan(basePackages = "org.zerock.bj2.mappers")
 public class B2Application {
 
 	public static void main(String[] args) {

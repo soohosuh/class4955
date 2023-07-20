@@ -1,7 +1,7 @@
-package org.zerock.b2.controller;
+package org.zerock.bj2.controller;
 
 import org.springframework.stereotype.Controller;
-import org.zerock.b2.service.TodoService;
+import org.zerock.bj2.service.TodoService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
